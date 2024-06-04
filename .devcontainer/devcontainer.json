@@ -1,0 +1,39 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/debian
+{
+	"name": "everest-dev",
+	"build": {
+		// Path is relative to the devcontainer.json file.
+		"dockerfile": "Dockerfile"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"DavidAnson.vscode-markdownlint@0.55.0",
+				"eamodio.gitlens@2024.5.2405",
+				"josetr.cmake-language-support-vscode@0.0.9",
+				"llvm-vs-code-extensions.vscode-clangd@0.1.28",
+				"ms-azuretools.vscode-docker@1.29.1",
+				"ms-vscode.cmake-tools@1.18.40",
+				"ms-vscode.cpptools-extension-pack@1.3.0",
+				"twxs.cmake@0.0.17",
+				"ms-dotnettools.vscode-dotnet-runtime@2.0.5",
+				"ms-vscode.cpptools@1.20.5",
+				"ms-vscode.cpptools-themes@2.0.0"
+			],
+			"settings": {
+				"clangd.arguments": [
+					"--compile-commands-dir=${workspaceFolder}/build"
+				]
+			}
+		}
+	},
+	"mounts": [],
+	"runArgs": [
+		"--network=infranet_network"
+	],
+	"containerEnv": {
+		"MQTT_SERVER_ADDRESS": "mqtt-server",
+		"MQTT_SERVER_PORT": "1883"
+	}
+}
