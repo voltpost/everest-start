@@ -51,6 +51,7 @@ jobs:
       with:
         path: ${{env.CPM_SOURCE_CACHE}}
         key: cpm
+        save-always: true
 
     - name: Initialize workspace
       run: edm init
