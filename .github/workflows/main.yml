@@ -27,6 +27,9 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Setup containerd
+        uses: crazy-max/ghaction-setup-containerd@v3.0.0
+
       - name: Pre-build dev container image
         uses: devcontainers/ci@v0.3
         with:
