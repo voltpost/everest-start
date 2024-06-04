@@ -15,8 +15,6 @@ env:
 jobs:
   build_devcontainer:
     runs-on: ubuntu-latest
-    env:
-      DOCKER_DEFAULT_PLATFORM: linux/amd64,linux/arm64
     steps:
       - uses: actions/checkout@v4
 
@@ -35,6 +33,7 @@ jobs:
         with:
           imageName: ${{env.DEVCONTAINER_IMAGE}}
           cacheFrom: ${{env.DEVCONTAINER_IMAGE}}
+          platform: linux/amd64,linux/arm64
           push: always
 
   build:
