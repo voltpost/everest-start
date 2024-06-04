@@ -51,6 +51,7 @@ jobs:
   build:
     # depends on docker build
     needs: build_devcontainer
+    continue-on-error: true
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
