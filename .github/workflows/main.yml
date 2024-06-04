@@ -52,10 +52,7 @@ jobs:
     # depends on docker build
     needs: build_devcontainer
     continue-on-error: true
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-13]
-    runs-on: ${{matrix.os}}
+    runs-on: ubuntu-latest
     container:
       image: ghcr.io/voltpost/everest-devcontainer
       credentials:
