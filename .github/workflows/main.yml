@@ -20,13 +20,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Pre-build image and run make ci-build in dev container
+    - name: Pre-build image
       uses: devcontainers/ci@v0.3
       with:
         imageName: ghcr.io/example/example-devcontainer
         cacheFrom: ghcr.io/example/example-devcontainer
         push: always
-        runCmd: make ci-build
 
     - name: Initialize workspace
       run: edm init
