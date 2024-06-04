@@ -9,23 +9,30 @@ on:
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
+  DEVCONTAINER_IMAGE: ghcr.io/voltpost/everest-devcontainer
 
 jobs:
-  build:
-    # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
-    # You can convert this to a matrix build if you need cross-platform coverage.
-    # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
+  build_devcontainer:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Pre-build image
-      uses: devcontainers/ci@v0.3
-      with:
-        imageName: ghcr.io/example/example-devcontainer
-        cacheFrom: ghcr.io/example/example-devcontainer
-        push: always
+      - name: Pre-build dev container image
+        uses: devcontainers/ci@v0.3
+        with:
+          imageName: ${{env.DEVCONTAINER_IMAGE}}
+          cacheFrom: ${{env.DEVCONTAINER_IMAGE}}
+          push: always
+
+  build:
+    # depends on docker build
+    needs: build_devcontainer
+    runs-on: ubuntu-latest
+    container: ghcr.io/voltpost/everest-devcontainer
+
+    steps:
+    - uses: actions/checkout@v4
 
     - name: Initialize workspace
       run: edm init
