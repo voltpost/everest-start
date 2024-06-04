@@ -25,8 +25,13 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup containerd
-        uses: crazy-max/ghaction-setup-containerd@v3.0.0
+      - name: Set up QEMU for multi-architecture builds
+        uses: docker/setup-qemu-action@v3
+
+      - name: Setup Docker buildx for multi-architecture builds
+        uses: docker/setup-buildx-action@v3
+        with:
+          use: true
 
       - name: Pre-build dev container image
         uses: devcontainers/ci@v0.3
