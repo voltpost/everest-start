@@ -10,6 +10,7 @@ env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
   DEVCONTAINER_IMAGE: ghcr.io/voltpost/everest-devcontainer
+  CPM_SOURCE_CACHE: ~/cache/CPM
 
 jobs:
   build_devcontainer:
@@ -41,12 +42,14 @@ jobs:
       credentials:
         username: ${{github.actor}}
         password: ${{secrets.GITHUB_TOKEN}}
+      env:
+        CPM_SOURCE_CACHE: ${{env.CPM_SOURCE_CACHE}}
     steps:
     - uses: actions/checkout@v4
 
     - uses: actions/cache@v4
       with:
-        path: $CPM_SOURCE_CACHE
+        path: ${{env.CPM_SOURCE_CACHE}}
         key: cpm
 
     - name: Initialize workspace
