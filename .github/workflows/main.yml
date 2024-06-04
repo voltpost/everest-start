@@ -44,8 +44,18 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - uses: actions/cache@v4
+      with:
+        path: $CPM_SOURCE_CACHE
+        key: cpm
+
     - name: Initialize workspace
       run: edm init
+
+    - name: Upload workspace config
+      uses: actions/upload-artifact@v3
+      with:
+        path: workspace-config.yaml
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
