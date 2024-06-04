@@ -15,6 +15,13 @@ env:
 jobs:
   build_devcontainer:
     runs-on: ubuntu-latest
+
+    env:
+      # Work around skopeo issue in ubuntu 22.
+      # https://github.com/containers/skopeo/issues/1874#issuecomment-1541088511
+      # https://github.com/devcontainers/ci/issues/191#issuecomment-1973786876
+      BUILDX_NO_DEFAULT_ATTESTATIONS: true
+
     steps:
       - uses: actions/checkout@v4
 
