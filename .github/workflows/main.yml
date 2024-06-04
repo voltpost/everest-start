@@ -54,6 +54,7 @@ jobs:
 
     - uses: actions/upload-artifact@v4
       with:
+        name: workspace-config.yaml
         path: workspace-config.yaml
 
     - name: Configure CMake
