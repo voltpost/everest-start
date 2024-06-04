@@ -52,8 +52,7 @@ jobs:
     - name: Initialize workspace
       run: edm init
 
-    - name: Upload workspace config
-      uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         path: workspace-config.yaml
 
