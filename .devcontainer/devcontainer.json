@@ -9,7 +9,7 @@
 				"DavidAnson.vscode-markdownlint@0.55.0",
 				"eamodio.gitlens@2024.5.2405",
 				"josetr.cmake-language-support-vscode@0.0.9",
-			        "llvm-vs-code-extensions.vscode-clangd",
+				"llvm-vs-code-extensions.vscode-clangd",
 				"ms-azuretools.vscode-docker@1.29.1",
 				"ms-dotnettools.vscode-dotnet-runtime@2.0.5",
 				"ms-vscode.cmake-tools",
@@ -17,7 +17,7 @@
 				"ms-vscode.cpptools-themes@2.0.0",
 				"ms-vscode.cpptools@1.20.5",
 				"pbkit.vscode-pbkit",
-				"twxs.cmake",
+				"twxs.cmake"
 			],
 			"settings": {
 				"clangd.arguments": [
