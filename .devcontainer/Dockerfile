@@ -60,8 +60,9 @@ RUN echo 'Acquire::http::Timeout "600";\nAcquire::ftp::Timeout "600";\nAcquire::
         libxslt1-dev \
         # for simulated serial port
         socat \
-        # protobuffer compiler
+        # protobuffer compiler and libraries
         nanopb \
+        libnanopb-dev \
     # clean up apt
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
