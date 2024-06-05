@@ -16,6 +16,7 @@ RUN echo 'Acquire::http::Timeout "600";\nAcquire::ftp::Timeout "600";\nAcquire::
         ninja-build \
         make \
         cmake \
+        doxygen \
         # compilers
         binutils \
         gcc \
