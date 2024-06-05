@@ -46,7 +46,7 @@ RUN echo 'Acquire::http::Timeout "600";\nAcquire::ftp::Timeout "600";\nAcquire::
         pkg-config \
         libpcap-dev \
         # required by RiseV2G
-        maven \
+        #maven \
         # required by pybind11
         python3-dev \
         # required for certificate generation
