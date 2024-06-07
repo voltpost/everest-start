@@ -2,7 +2,10 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/debian
 {
 	"name": "everest-dev",
-	"image": "ghcr.io/voltpost/everest-devcontainer:latest",
+	//"image": "ghcr.io/voltpost/everest-devcontainer:latest",
+	"build": {
+		"dockerfile": "Dockerfile"
+},
 	"customizations": {
 		"vscode": {
 			"extensions": [

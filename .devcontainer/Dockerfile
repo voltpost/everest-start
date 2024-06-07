@@ -24,6 +24,7 @@ RUN echo 'Acquire::http::Timeout "600";\nAcquire::ftp::Timeout "600";\nAcquire::
         # compiler tools
         clang-tidy \
         clangd \
+        clang-format \
         ccache \
         # development tools
         gdb \
