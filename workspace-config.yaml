@@ -1,0 +1,63 @@
+Josev:
+  cmake_condition: EVEREST_ENABLE_PY_SUPPORT AND EVEREST_DEPENDENCY_ENABLED_JOSEV
+  git: https://github.com/EVerest/ext-switchev-iso15118.git
+  git_tag: 2024.2.1
+everest-cmake:
+  git: https://github.com/EVerest/everest-cmake.git
+  git_tag: v0.2.0
+everest-core:
+  git: https://github.com/EVerest/everest-core.git
+  git_tag: 2024.5.0
+everest-dev-environment:
+  git: https://github.com/EVerest/everest-dev-environment.git
+  git_tag: v0.6.1
+everest-framework:
+  git: https://github.com/EVerest/everest-framework.git
+  git_tag: v0.14.0
+  options:
+  - BUILD_TESTING OFF
+everest-utils:
+  cmake_condition: EVEREST_CORE_BUILD_TESTING
+  git: https://github.com/EVerest/everest-utils.git
+  git_tag: v0.2.3
+ext-mbedtls:
+  cmake_condition: EVEREST_DEPENDENCY_ENABLED_MBEDTLS
+  git: https://github.com/EVerest/ext-mbedtls.git
+  git_tag: 8b3f26a5ac38d4fdccbc5c5366229f3e01dafcc0
+  options:
+  - ENABLE_PROGRAMS OFF
+  - ENABLE_TESTING OFF
+  - MBEDTLS_FATAL_WARNINGS OFF
+ext-openv2g:
+  cmake_condition: EVEREST_DEPENDENCY_ENABLED_OPENV2G
+  git: https://github.com/EVerest/ext-openv2g.git
+  git_tag: 2023.3.0
+libevse-security:
+  git: https://github.com/EVerest/libevse-security.git
+  git_tag: v0.7.0
+libfsm:
+  cmake_condition: EVEREST_DEPENDENCY_ENABLED_LIBFSM
+  git: https://github.com/EVerest/libfsm.git
+  git_tag: v0.2.0
+liblog:
+  git: https://github.com/EVerest/liblog.git
+  git_tag: v0.2.1
+  options:
+  - BUILD_EXAMPLES OFF
+libmodbus:
+  cmake_condition: EVEREST_DEPENDENCY_ENABLED_LIBMODBUS
+  git: https://github.com/EVerest/libmodbus.git
+  git_tag: v0.3.1
+libocpp:
+  cmake_condition: EVEREST_DEPENDENCY_ENABLED_LIBOCPP
+  git: https://github.com/EVerest/libocpp.git
+  git_tag: v0.12.0
+libslac:
+  cmake_condition: EVEREST_DEPENDENCY_ENABLED_LIBSLAC
+  git: https://github.com/EVerest/libslac.git
+  git_tag: v0.3.0
+libtimer:
+  git: https://github.com/EVerest/libtimer.git
+  git_tag: v0.1.1
+  options:
+  - BUILD_EXAMPLES OFF
