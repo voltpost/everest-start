@@ -7,6 +7,7 @@
 		"dockerfile": "Dockerfile"
 	},
 	"postStartCommand": "sudo npm install -g --unsafe-perm node-red && sudo npm install -g node-red-dashboard node-red-contrib-ui-actions node-red-node-ui-table node-red-contrib-ui-level node-red-contrib-cobs node-red-contrib-protobuf node-red-node-serialport",
+	"postAttachCommand": "node-red",
 	"customizations": {
 		"vscode": {
 			"extensions": [
