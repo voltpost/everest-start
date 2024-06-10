@@ -33,7 +33,9 @@
 	},
 	"mounts": [],
 	"runArgs": [
-		"--network=infranet_network"
+		"--network=infranet_network",
+		"--name",
+		"everest-devcontainer"
 	],
 	"containerEnv": {
 		"MQTT_SERVER_ADDRESS": "mqtt-server",
